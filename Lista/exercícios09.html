@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+<body>
+    <h1>Exercício 9</h1>
+    <h1>>Exemplo de Rendimento Poupança</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+	<label for="deposito">Valor depositado:</label>
+	<input type="text" id="deposito"><br>
+	<button onclick="calcularRendimento()">Calcular rendimento</button><br><br>
+	<p id="resultado"></p>
+
+	<script>
+		function calcularRendimento() {
+			var deposito = parseFloat(document.getElementById("deposito").value);
+			var rendimento = deposito * 0.007;
+			var resultado = deposito + rendimento;
+
+			document.getElementById("resultado").innerHTML = "Valor com rendimento: R$" + resultado.toFixed(2);
+		}
+	</script>
+</body>
+</html>

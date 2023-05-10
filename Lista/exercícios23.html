@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+    <h1> Exercício 23</h1>
+    <h1>Mensagem de número</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero">
+    <button onclick="verificarNumero()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarNumero() {
+            var numero = document.getElementById("numero").value;
+            var mensagem;
+
+            if (numero > 80) {
+                mensagem = "O número é maior que 80.";
+            } else if (numero < 25) {
+                mensagem = "O número é menor que 25.";
+            } else if (numero == 40) {
+                mensagem = "O número é igual a 40.";
+            } else {
+                mensagem = "O número não é maior que 80, menor que 25 nem igual a 40.";
+            }
+
+            document.getElementById("resultado").textContent = mensagem;
+        }
+    </script>
+</body>
+</html>

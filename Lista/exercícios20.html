@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+    <h1>Exercício 20</h1>
+    <h1>Carango Velho - Cálculo de Desconto</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <form>
+      <label for="ano">Ano do Veículo:</label>
+      <input type="number" id="ano" name="ano"><br>
+
+      <label for="preco">Preço do Veículo:</label>
+      <input type="number" id="preco" name="preco"><br>
+
+      <button type="button" onclick="calcularDesconto()">Calcular Desconto</button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="desconto"></p>
+    <p id="preco-final"></p>
+
+    <h2>Totais:</h2>
+    <p id="total-ate-2000"></p>
+    <p id="total-geral"></p>
+
+    <script>
+      var totalAte2000 = 0;
+      var totalGeral = 0;
+
+      function calcularDesconto() {
+        var ano = parseInt(document.getElementById("ano").value);
+        var preco = parseFloat(document.getElementById("preco").value);
+
+        var desconto = 0;
+
+        if (ano <= 2000) {
+          desconto = preco * 0.12;
+          totalAte2000++;
+        } else {
+          desconto = preco * 0.07;
+        }
+
+        var precoFinal = preco - desconto;
+
+        document.getElementById("desconto").textContent = `Desconto: R$ ${desconto}`;
+        document.getElementById("preco-final").textContent = `Preço Final: R$ ${precoFinal}`;
+
+        totalGeral++;
+        document.getElementById("total-ate-2000").textContent = `Total de Carros até 2000: ${totalAte2000}`;
+        document.getElementById("total-geral").textContent = `Total Geral de Carros: ${totalGeral}`;
+      }
+    </script>
+  </body>
+</body>
+</html>

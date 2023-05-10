@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+<body>
+    <h1> Exercício 3</h1>
+    <h1>Consumo médio de um automóvel</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="distancia">Distância total percorrida (km):</label>
+    <input type="number" id="distancia">
+
+    <br>
+
+    <label for="combustivel">Total de combustível gasto (litros):</label>
+    <input type="number" id="combustivel">
+
+    <br>
+
+    <button onclick="calcularConsumo()">Calcular consumo médio</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularConsumo() {
+            var distancia = parseInt(document.getElementById("distancia").value);
+            var combustivel = parseInt(document.getElementById("combustivel").value);
+            var consumoMedio = distancia / combustivel;
+
+            document.getElementById("resultado").innerHTML = "O consumo médio do automóvel é de " + consumoMedio + " km/l";
+        }
+    </script>
+</body>
+</html>

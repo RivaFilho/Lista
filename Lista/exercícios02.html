@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <style>
+        body {
+            background-color: black;
+            color: aquamarine;
+            font: normal 20pt Arial;
+        }
+        h1 { 
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1> Exercício 2</h1>
+    <h1>Operações Matemáticas</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="num1">Digite o primeiro número:</label>
+    <input type="number" id="num1">
+    <br><br>
+    <label for="num2">Digite o segundo número:</label>
+    <input type="number" id="num2">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+    <p id="soma"></p>
+    <p id="subtracao"></p>
+    <p id="multiplicacao"></p>
+    <p id="divisao"></p>
+
+    <script>
+        function calcular() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+
+            var soma = num1 + num2;
+            var subtracao = num1 - num2;
+            var multiplicacao = num1 * num2;
+            var divisao = num1 / num2;
+
+            document.getElementById("soma").innerHTML = "A soma dos valores é " + soma;
+            document.getElementById("subtracao").innerHTML = "A subtração dos valores é " + subtracao;
+            document.getElementById("multiplicacao").innerHTML = "A multiplicação dos valores é " + multiplicacao;
+            document.getElementById("divisao").innerHTML = "A divisão dos valores é " + divisao;
+        }
+    </script>
+</body>
+</html>

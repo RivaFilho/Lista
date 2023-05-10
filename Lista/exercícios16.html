@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+    <h1> Exercício 16</h1>
+    <h1>Média do aluno</h1>
+    <form>
+        <label for="nome">Nome do Aluno:</label>
+        <input type="text" id="nome" name="nome"><br>
+  
+        <label for="nota1">Nota 1:</label>
+        <input type="number" id="nota1" name="nota1"><br>
+  
+        <label for="nota2">Nota 2:</label>
+        <input type="number" id="nota2" name="nota2"><br>
+  
+        <label for="nota3">Nota 3:</label>
+        <input type="number" id="nota3" name="nota3"><br>
+  
+        <input type="button" value="Calcular Média" onclick="calcularMedia()">
+      </form>
+  
+      <p id="resultado"></p>
+  
+      <script>
+        function calcularMedia() {
+          var nome = document.getElementById("nome").value;
+          var nota1 = parseFloat(document.getElementById("nota1").value);
+          var nota2 = parseFloat(document.getElementById("nota2").value);
+          var nota3 = parseFloat(document.getElementById("nota3").value);
+  
+          var media = (nota1 + nota2 + nota3) / 3;
+  
+          var mensagem = "";
+          if (media >= 7) {
+            mensagem = "Aprovado";
+          } else if (media >= 5) {
+            mensagem = "Recuperação";
+          } else {
+            mensagem = "Reprovado";
+          }
+  
+          document.getElementById("resultado").innerHTML = `${nome}, sua média é ${media} e sua menção é ${mensagem}`;
+        }
+      </script>
+</body>
+</html>

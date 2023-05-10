@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+  <h1> Exercício 17</h1>
+  <h1> Números estão no intervalo entre 10 e 150</h1>
+  <h3> Rivadalvio j da silva filho</h3>
+  <fieldset>
+  <label for="numeros">Digite os números (separados por espaços):</label>
+  <input type="text" id="numeros" name="numeros">
+
+  <br>
+  <input type="button" value="Contar" onclick="contarNumeros()">
+</fieldset>
+  <br>
+  <label for="resultado">Quantidade de números no intervalo:</label>
+  <p id="resultado"></p>
+  
+
+
+    <script>
+    function contarNumeros() {
+    var numeros = document.getElementById("numeros").value.split(" ");
+    var contador = 0;
+    for (var i = 0; i < numeros.length; i++) {
+        var numero = parseInt(numeros[i]);
+        if (numero >= 10 && numero <= 150) {
+            contador++;
+        }
+    }
+    document.getElementById("resultado").innerHTML = "Existem " + contador + " números no intervalo entre 10 e 150.";
+}
+    </script>
+</body>
+</html>

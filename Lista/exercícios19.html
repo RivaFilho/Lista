@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+
+<style> 
+  body{
+      background-color: rgb(0, 0, 0);
+      color: aquamarine;
+      font: normal 20pt Arial;
+  }
+  h1{ color: aliceblue;
+
+  }
+
+  </style>
+<body>
+  <h1>Exercício 19</h1>
+  <h1>Contagem de Gêneros</h1>
+  <h3> Rivadalvio j da silva filho</h3>
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br>
+
+    <label for="sexo">Sexo:</label>
+    <input type="radio" id="sexo-m" name="sexo" value="m">
+    <label for="sexo-m">Masculino</label>
+    <input type="radio" id="sexo-f" name="sexo" value="f">
+    <label for="sexo-f">Feminino</label><br>
+
+    <button type="button" onclick="adicionarPessoa()">Adicionar</button>
+  </form>
+
+  <h2>Pessoas Adicionadas:</h2>
+  <ul id="pessoas"></ul>
+
+  <h2>Contagem de Gêneros:</h2>
+  <p id="total-m"></p>
+  <p id="total-f"></p>
+
+  <script>
+    var pessoas = [];
+    var totalM = 0;
+    var totalF = 0;
+
+    function adicionarPessoa() {
+      var nome = document.getElementById("nome").value;
+      var sexo = document.querySelector('input[name="sexo"]:checked').value;
+
+      var pessoa = {
+        nome: nome,
+        sexo: sexo
+      };
+
+      pessoas.push(pessoa);
+
+      var listaPessoas = document.getElementById("pessoas");
+      var itemLista = document.createElement("li");
+      itemLista.textContent = `${nome} (${sexo === "m" ? "Homem" : "Mulher"})`;
+      listaPessoas.appendChild(itemLista);
+
+      if (sexo === "m") {
+        totalM++;
+        document.getElementById("total-m").textContent = `Total de Homens: ${totalM}`;
+      } else {
+        totalF++;
+        document.getElementById("total-f").textContent = `Total de Mulheres: ${totalF}`;
+      }
+    }
+  </script>
+</body>
+</html>

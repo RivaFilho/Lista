@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <style> 
+        body{
+            background-color: rgb(0, 0, 0);
+            color: aquamarine;
+            font: normal 20pt Arial;
+        }
+        h1{ color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1> Exercício 1</h1>
+    <h2> Somar números</h2>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="numero1">Digite o primeiro número:</label>
+    <input type="text" id="numero1" size="5"/>
+    <br>
+    <label for="numero2">Digite o segundo número:</label>
+    <input type="text" id="numero2" size="5"/>
+    <br>
+    <button onclick="mostrarResultado()">Calcular soma</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarResultado() {
+            var num1 = parseInt(document.getElementById("numero1").value);
+            var num2 = parseInt(document.getElementById("numero2").value);
+            var soma = num1 + num2;
+            var mensagem = "A soma de " + num1 + " e " + num2 + " é igual a " + soma + ".";
+            document.getElementById("resultado").innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>

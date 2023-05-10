@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+<body>
+    <h1>Exercício 8</h1>
+    <h1>Coversor de dólar para real</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="cotacao">Cotação do dólar:</label>
+    <input type="text" id="cotacao">
+    <br>
+    <label for="dolares">Quantidade de dólares:</label>
+    <input type="text" id="dolares">
+    <br>
+    <button onclick="converter()">Converter</button>
+    <br>
+    <p id="resultado"></p>
+    
+    <script>
+        function converter() {
+            var cotacao = Number.parseFloat(document.getElementById("cotacao").value);
+            var dolares = Number.parseFloat(document.getElementById("dolares").value);
+            var reais = dolares * cotacao;
+            document.getElementById("resultado").innerHTML = "O valor em reais é R$ " + reais.toFixed(2);
+        }
+    </script>
+</body>
+</html>

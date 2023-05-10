@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+  <h1>Exercício 21</h1>
+  <h1>Aptidão para o Serviço Militar Obrigatório</h1>
+  <h3> Rivadalvio j da silva filho</h3>
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br>
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo">
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
+    </select><br>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" name="idade"><br>
+
+    <label for="saude">Saúde:</label>
+    <select id="saude" name="saude">
+      <option value="B">Boa</option>
+      <option value="R">Regular</option>
+      <option value="P">Ruim</option>
+    </select><br>
+
+    <button type="button" onclick="verificarAptidao()">Verificar Aptidão</button>
+  </form>
+
+  <h2>Resultado:</h2>
+  <p id="aptidao"></p>
+
+  <h2>Totais:</h2>
+  <p id="total-aptos"></p>
+  <p id="total-inaptos"></p>
+
+  <script>
+    var totalAptos = 0;
+    var totalInaptos = 0;
+
+    function verificarAptidao() {
+      var nome = document.getElementById("nome").value;
+      var sexo = document.getElementById("sexo").value;
+      var idade = parseInt(document.getElementById("idade").value);
+      var saude = document.getElementById("saude").value;
+
+      var aptidao = false;
+
+      if (sexo === "M" && idade >= 18 && saude !== "P") {
+        aptidao = true;
+      }
+
+      if (aptidao) {
+        document.getElementById("aptidao").textContent = `${nome} está apto para o serviço militar obrigatório.`;
+        totalAptos++;
+      } else {
+        document.getElementById("aptidao").textContent = `${nome} não está apto para o serviço militar obrigatório.`;
+        totalInaptos++;
+      }
+
+      document.getElementById("total-aptos").textContent = `Total de Aptos: ${totalAptos}`;
+      document.getElementById("total-inaptos").textContent = `Total de Inaptos: ${totalInaptos}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+    <h1> Exercício 14</h1>
+    <h1>Verificar com é o maior</h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1"><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2"><br>
+    <button onclick="verificarMaior()">Verificar maior</button>
+    <p id="resultado"></p>
+    <script>
+    function verificarMaior() {
+        const valor1 = document.getElementById("valor1").value;
+        const valor2 = document.getElementById("valor2").value;
+      
+        if (valor1 > valor2) {
+          document.getElementById("resultado").innerHTML = `O valor ${valor1} é maior`;
+        } else if (valor2 > valor1) {
+          document.getElementById("resultado").innerHTML = `O valor ${valor2} é maior`;
+        } else {
+          document.getElementById("resultado").innerHTML = "Os valores são iguais";
+        }
+      }
+    </script>
+</body>
+</html>

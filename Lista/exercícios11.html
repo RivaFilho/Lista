@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<style> 
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        font: normal 20pt Arial;
+    }
+    h1{ color: aliceblue;
+
+    }
+
+    </style>
+
+<body>
+    <h1> Exercício 11</h1>
+    <h1> Mostrar o valor de venda com percentual </h1>
+    <h3> Rivadalvio j da silva filho</h3>
+    <label for="precoCusto">Preço de Custo:</label>
+    <input type="number" id="precoCusto" step="0.01">
+    
+    <label for="percentualAcrescimo">Percentual de Acréscimo:</label>
+    <input type="number" id="percentualAcrescimo"">
+    
+    <button onclick="calcularPrecoVenda()">Calcular</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+    function calcularPrecoVenda() {
+      var precoCusto = parseFloat(document.getElementById("precoCusto").value);
+      var percentualAcrescimo = parseFloat(document.getElementById("percentualAcrescimo").value);
+    
+      var precoVenda = precoCusto * (1 + percentualAcrescimo/100);
+    
+      document.getElementById("resultado").textContent = `O preço de venda é R$ ${precoVenda}.`;
+    }
+    </script>
+    
+</body>
+</html>
